@@ -2,28 +2,27 @@
 
 node default {
 
-	$projectname 		= 'mydjango'	
+	$projectname		= 'mydjango'
 
-	$db_name 			= 'mydjangodb'
-	$db_user 			= 'dbuser'
-	$db_password 		= 'dbpassword'
-	
+	$db_name			= 'mydjangodb'
+	$db_user			= 'dbuser'
+	$db_password		= 'dbpassword'
 
 
 	# PYTHON
 
 	Exec {
-  		path => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+		path => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
 	}
 
 	# -- enable dev packages
 
-	class {'python::dev': 
+	class {'python::dev':
 		version => '2.7',
 	}
 
-	class { "python::venv": 
-		owner => "vagrant", 
+	class { "python::venv":
+		owner => "vagrant",
 		group => "vagrant",
 	}
 
